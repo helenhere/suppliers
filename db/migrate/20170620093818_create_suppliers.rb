@@ -5,7 +5,9 @@ class CreateSuppliers < ActiveRecord::Migration
       t.string :last_name
       t.string :product_name
       t.string :phone
-      t.string :compony
+      t.string :company
+
+      t.belongs_to :city, foreign_key: true
 
       t.timestamps null: false
     end

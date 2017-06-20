@@ -11,11 +11,62 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170618153841) do
+ActiveRecord::Schema.define(version: 20170620101701) do
 
   create_table "cities", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "cities_customers", id: false, force: :cascade do |t|
+    t.integer "customer_id", null: false
+    t.integer "city_id",     null: false
+  end
+
+  create_table "cities_orders", id: false, force: :cascade do |t|
+    t.integer "order_id", null: false
+    t.integer "city_id",  null: false
+  end
+
+  create_table "cities_suppliers", id: false, force: :cascade do |t|
+    t.integer "supplier_id", null: false
+    t.integer "city_id",     null: false
+  end
+
+  create_table "customers", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "customers_orders", id: false, force: :cascade do |t|
+    t.integer "order_id",    null: false
+    t.integer "customer_id", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.date     "date_of_purchase"
+    t.time     "time_of_purchase"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "orders_suppliers", id: false, force: :cascade do |t|
+    t.integer "order_id",    null: false
+    t.integer "supplier_id", null: false
+  end
+
+  create_table "suppliers", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "product_name"
+    t.string   "phone"
+    t.string   "compony"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end

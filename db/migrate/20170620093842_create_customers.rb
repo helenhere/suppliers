@@ -5,6 +5,8 @@ class CreateCustomers < ActiveRecord::Migration
       t.string :last_name
       t.string :phone
 
+      t.belongs_to :city, foreign_key: true
+
       t.timestamps null: false
     end
   end
