@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :orders
   resources :customers
   resources :suppliers
+
+  root  'customers#index'
   # The priority is upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
