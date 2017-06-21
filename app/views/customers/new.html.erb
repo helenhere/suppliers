@@ -1,5 +1,8 @@
-<h1>New Customer</h1>
+<h1>Registration</h1>
 
-<%= render 'form', customer: @customer %>
+<% provide(:button_text, 'Sign up') %>
+<% provide(:path, signup_path) %>
+<%= render 'form' %>
+<!--%= render 'form', customer: @customer %>-->
 
 <%= link_to 'Back', customers_path %>
