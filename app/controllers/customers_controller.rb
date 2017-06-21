@@ -31,6 +31,7 @@ class CustomersController < ApplicationController
 
     respond_to do |format|
       if @customer.save
+        log_in @customer
         format.html { redirect_to @customer, notice: 'Customer was successfully created.' }
         format.json { render :show, status: :created, location: @customer }
       else
@@ -43,6 +44,7 @@ class CustomersController < ApplicationController
   # PATCH/PUT /customers/1
   # PATCH/PUT /customers/1.json
   def update
+    @customer = Customer.find(params[:id])
     respond_to do |format|
       if @customer.update(customer_params)
         format.html { redirect_to @customer, notice: 'Customer was successfully updated.' }
@@ -57,7 +59,7 @@ class CustomersController < ApplicationController
   # DELETE /customers/1
   # DELETE /customers/1.json
   def destroy
-    @customer.destroy
+    Customer.find(params[:id]).destroy
     respond_to do |format|
       format.html { redirect_to customers_url, notice: 'Customer was successfully destroyed.' }
       format.json { head :no_content }
@@ -83,10 +85,10 @@ class CustomersController < ApplicationController
 
   def correct_customer
     @customer = Customer.find(params[:id])
-    redirect_to(orders_path) unless @customer.current_customer?
+    redirect_to(orders_path) unless @customer.current_customer?(@customer)
   end
 
-  def current_user
+  def current_customer
     if (customer_id = session[:customer_id])
       @current_customer ||= Customer.find_by(id: customer_id)
     elsif (customer_id = cookies.signed[:customer_id])
@@ -112,8 +114,8 @@ class CustomersController < ApplicationController
     cookies.permanent[:remember_token] = customer.remember_token
   end
 
-  def current_customer?
-    customer == @current_customer
+  def current_customer?(customer)
+    customer == current_customer
   end
 
   def forget(customer)

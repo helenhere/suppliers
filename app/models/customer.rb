@@ -8,7 +8,8 @@ class Customer < ActiveRecord::Base
   validates :last_name, presence: true
   validates :phone, format: { with: VALID_PHONE_NUMBER }, uniqueness: true
   validates :email, presence: true, format: {with: VALID_EMAIL_REGEX}
-  has_secure_password
+  # has_secure_password
+  validates :password, presence: true
   validates :city_id, presence: true
 
   has_many :orders
