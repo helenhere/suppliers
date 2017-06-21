@@ -32,12 +32,9 @@
       <%= f.password_field :password %>
     </div>
     <div class="field">
-      <%= f.select :city_id, options_for_select(City.all.map {|city| city.name}) %><br>
+      <%= f.select :city_id, options_for_select(City.all.map {|city| [city.name, city.id]}) %><br>
     </div>
   <div class="actions">
     <%= f.submit %>
   </div>
-    <!--<div class="actions">-->
-      <!--%= f.submit %>-->
-    <!--</div>-->
 <% end %>
