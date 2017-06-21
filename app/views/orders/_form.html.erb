@@ -16,13 +16,13 @@
     <%= f.datetime_select :datetime_of_purchase %>
   </div>
     <div class="field">
-      <%= f.select :city_id, options_for_select(City.all.map {|city| city.name}) %><br>
+      <%= f.select :city_id, options_for_select(City.all.map {|city| [city.name, city.id]}) %><br>
     </div>
     <div class="field">
-      <%= f.select :customer_id, options_for_select(Customer.all.map {|customer| customer.first_name}) %><br>
+      <%= f.select :customer_id, options_for_select(Customer.all.map {|customer| [customer.first_name, customer.id]}) %><br>
     </div>
     <div class="field">
-      <%= f.select :supplier_id, options_for_select(Supplier.all.map {|supplier| supplier.first_name}) %><br>
+      <%= f.select :supplier_id, options_for_select(Supplier.all.map {|supplier| [supplier.first_name, supplier.id]}) %><br>
     </div>
   <div class="actions">
     <%= f.submit %>

@@ -7,7 +7,17 @@
 
 <p>
   <strong>City of purchase:</strong>
-  <%= @order.city %>
+  <%= @order.city.name if @order.city.present? %>
+</p>
+
+<p>
+  <strong>Customer of purchase:</strong>
+  <%= @order.customer.first_name if @order.customer.present? %>
+</p>
+
+<p>
+  <strong>Supplier of purchase:</strong>
+  <%= @order.supplier.first_name if @order.supplier.present? %>
 </p>
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
