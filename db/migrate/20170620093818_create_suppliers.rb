@@ -7,7 +7,7 @@ class CreateSuppliers < ActiveRecord::Migration
       t.string :phone
       t.string :company
 
-      t.belongs_to :city, foreign_key: true
+      t.belongs_to :city, foreign_key: true, column: :city_id
 
       t.timestamps null: false
     end

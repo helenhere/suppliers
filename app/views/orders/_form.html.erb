@@ -18,6 +18,12 @@
     <div class="field">
       <%= f.select :city_id, options_for_select(City.all.map {|city| city.name}) %><br>
     </div>
+    <div class="field">
+      <%= f.select :customer_id, options_for_select(Customer.all.map {|customer| customer.first_name}) %><br>
+    </div>
+    <div class="field">
+      <%= f.select :supplier_id, options_for_select(Supplier.all.map {|supplier| supplier.first_name}) %><br>
+    </div>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -6,7 +6,7 @@ class Supplier < ActiveRecord::Base
   validates :product_name, presence: true
   validates :phone, format: { with: VALID_PHONE_NUMBER }, uniqueness: true
   validates :first_name, presence: true
-  # validates :city_id, presence: true
+  validates :city_id, presence: true
 
   has_many :orders
   belongs_to :city

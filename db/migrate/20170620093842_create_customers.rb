@@ -4,8 +4,10 @@ class CreateCustomers < ActiveRecord::Migration
       t.string :first_name
       t.string :last_name
       t.string :phone
+      t.string :email
+      t.string :password
 
-      t.belongs_to :city, foreign_key: true
+      t.belongs_to :city, foreign_key: true, column: city_id
 
       t.timestamps null: false
     end
