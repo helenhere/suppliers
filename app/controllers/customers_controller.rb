@@ -77,7 +77,7 @@ class CustomersController < ApplicationController
 
   def logged_in_customer
     unless logged_in?
-      redirect_to customers_login_url
+      redirect_to customers_url
     end
   end
 
