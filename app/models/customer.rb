@@ -9,6 +9,7 @@ class Customer < ActiveRecord::Base
   validates :email, presence: true, format: {with: VALID_EMAIL_REGEX}
   has_secure_password
   validates :city_id, presence: true
+  validates :role, presence: true, inclusion: {in: ['guest', 'customer']}
 
   has_many :orders
   belongs_to :city

@@ -7,6 +7,7 @@ class CreateCustomers < ActiveRecord::Migration
       t.string :email
       t.string :remember_digest
       t.string :password_digest
+      t.string :role, :default => :guest
 
       t.belongs_to :city, foreign_key: true, column: :city_id
 

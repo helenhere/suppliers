@@ -26,9 +26,10 @@ ActiveRecord::Schema.define(version: 20170620094146) do
     t.string   "email"
     t.string   "remember_digest"
     t.string   "password_digest"
+    t.string   "role",            default: "guest"
     t.integer  "city_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
   create_table "orders", force: :cascade do |t|
