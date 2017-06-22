@@ -5,11 +5,10 @@ class CreateCustomers < ActiveRecord::Migration
       t.string :last_name
       t.string :phone
       t.string :email
-      t.string :password
       t.string :remember_digest
       t.string :password_digest
 
-      t.belongs_to :city, foreign_key: true, column: city_id
+      t.belongs_to :city, foreign_key: true, column: :city_id
 
       t.timestamps null: false
     end
