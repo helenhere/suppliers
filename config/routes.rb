@@ -13,6 +13,10 @@ Rails.application.routes.draw do
 
   match '/signup', to: 'customers#new', via: 'get'
   match '/signup', to: 'customers#create', via: 'post'
+
+  match '/customers', to: 'customers#index', via: 'get'
+  match '/customer', to: 'customers#show', via: 'get'
+  match '/customers', to: 'customers#destroy', via: 'delete'
 end
 
 

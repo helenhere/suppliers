@@ -54,7 +54,7 @@ class CustomersController < ApplicationController
   # DELETE /customers/1.json
   def destroy
     Customer.find(params[:id]).destroy
-      format.html { redirect_to customers_path, notice: 'Customer was successfully destroyed.' }
+      redirect_to customers_path
   end
 
   def logged_in_customer
