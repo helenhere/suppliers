@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20170620094146) do
     t.string   "last_name"
     t.string   "phone"
     t.string   "email"
+    t.string   "remember_digest"
     t.string   "password_digest"
     t.integer  "city_id"
     t.datetime "created_at",      null: false

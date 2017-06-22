@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :orders
   resources :customers
   resources :suppliers
-  resources :sessions, only: [:create, :destroy]
+  # resources :sessions, only: [:create, :destroy]
 
   root  'customers#index'
   match '/login', to: 'sessions#new', via: 'get'

@@ -11,15 +11,13 @@
         <%= f.password_field :password %>
       </div>
 
-      <!--<div class="action">-->
-      <!--%= f.label :remember_me %>-->
-      <!--%= f.check_box :remember_me %>-->
-      <!--<span>Remember me</span>-->
-      <!--</div>-->
+      <div class="action">
+      <%= f.label :remember_me %>
+      <%= f.check_box :remember_me %>
+      </div>
 
       <div class="action">
         <%= f.submit 'Log in' %>
-        <!--% redirect_to customers_url %>-->
       </div>
 
       <%= link_to 'Back', customers_path %>

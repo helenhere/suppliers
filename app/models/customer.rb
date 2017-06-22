@@ -1,6 +1,7 @@
 class Customer < ActiveRecord::Base
   VALID_PHONE_NUMBER = /0[569][035-9](\d){7}/
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  ROLES = [:guest, :custom]
 
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -41,4 +42,8 @@ class Customer < ActiveRecord::Base
   def forget
     update_attribute(:remember_digest, nil)
   end
+
+  # def is?(requested_role)
+  #   self.role == requested_role.to_s
+  # end
 end
