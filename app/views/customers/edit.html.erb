@@ -1,5 +1,6 @@
 <h1>Editing Customer</h1>
 
+<% provide(:path, "/customers/#{current_customer.id}") %>
 <%= render 'form' %>
 
 <%= link_to 'Show', @customer %> |

@@ -8,8 +8,7 @@ class SessionsController < ApplicationController
     if customer && customer.authenticate(params[:session][:password])
       log_in(customer)
       params[:session][:remember_me] == '1' ? remember(customer) : forget(customer)
-      redirect_to(session[:forwarding_url] || root_path)
-      session.delete(:forwarding_url)
+      redirect_back_or(root_path)
     else
       flash[:error] = 'Invalid email/password combination'
       render 'new'
