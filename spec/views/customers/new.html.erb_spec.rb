@@ -5,7 +5,8 @@ RSpec.describe "customers/new", type: :view do
     assign(:customer, Customer.new(
       :first_name => "MyString",
       :last_name => "MyString",
-      :phone => "MyString"
+      :phone => "0931276183",
+      :city_id => 1
     ))
   end
 

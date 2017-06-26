@@ -6,8 +6,9 @@ RSpec.describe "suppliers/new", type: :view do
       :first_name => "MyString",
       :last_name => "MyString",
       :product_name => "MyString",
-      :phone => "MyString",
-      :compony => "MyString"
+      :phone => "0931276184",
+      :company => "MyString",
+      :city_id => 1
     ))
   end
 
@@ -24,7 +25,7 @@ RSpec.describe "suppliers/new", type: :view do
 
       assert_select "input#supplier_phone[name=?]", "supplier[phone]"
 
-      assert_select "input#supplier_compony[name=?]", "supplier[compony]"
+      assert_select "input#supplier_company[name=?]", "supplier[company]"
     end
   end
 end

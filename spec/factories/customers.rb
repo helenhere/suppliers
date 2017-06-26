@@ -11,5 +11,11 @@ FactoryGirl.define do
     role 'guest'
 
     association :city
+
+    factory :customer_with_order do
+      after_create do |customer|
+        create(:order, customer: customer)
+      end
+    end
   end
 end

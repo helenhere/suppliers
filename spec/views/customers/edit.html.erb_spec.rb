@@ -5,7 +5,8 @@ RSpec.describe "customers/edit", type: :view do
     @customer = assign(:customer, Customer.create!(
       :first_name => "MyString",
       :last_name => "MyString",
-      :phone => "MyString"
+      :phone => "0931276183",
+      :city_id => 1
     ))
   end
 

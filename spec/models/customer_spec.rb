@@ -156,4 +156,19 @@ RSpec.describe Customer, type: :model do
       specify { expect(customer_for_invalid_password).to be false }
     end
   end
+
+  describe 'when city_id is not present' do
+    before { customer.city_id = nil }
+    it { should_not be_valid }
+  end
+
+  describe 'orders associations' do
+
+    let(:customer_with_order) { create :customer_with_order}
+
+    it 'should destroy associated orders' do
+      customer.destroy
+      expect(customer.orders).to be_empty
+    end
+  end
 end

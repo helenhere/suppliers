@@ -6,8 +6,9 @@ RSpec.describe "suppliers/show", type: :view do
       :first_name => "First Name",
       :last_name => "Last Name",
       :product_name => "Product Name",
-      :phone => "Phone",
-      :compony => "Compony"
+      :phone => "0931276184",
+      :company => "Company",
+      :city_id => 1
     ))
   end
 
@@ -17,6 +18,6 @@ RSpec.describe "suppliers/show", type: :view do
     expect(rendered).to match(/Last Name/)
     expect(rendered).to match(/Product Name/)
     expect(rendered).to match(/Phone/)
-    expect(rendered).to match(/Compony/)
+    expect(rendered).to match(/Company/)
   end
 end
