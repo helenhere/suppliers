@@ -52,5 +52,6 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem "factory_girl_rails"
   gem 'simplecov', :require => false, :group => :test
+  gem 'capybara'
 end
 

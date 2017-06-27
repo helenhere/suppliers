@@ -46,11 +46,6 @@ RSpec.describe Customer, type: :model do
     it { should_not be_valid }
   end
 
-  # describe 'when phone is too short' do
-  #   before { customer.phone = 'a' * 9 }
-  #   it { should be_invalid }
-  # end
-
   describe 'when phone format is valid' do
     it 'should be valid' do
       customer.phone = '0931276183'
